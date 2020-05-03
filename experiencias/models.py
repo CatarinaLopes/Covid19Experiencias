@@ -15,6 +15,6 @@ class UserPost(models.Model):
 
 class UserComment(models.Model):
     user_name = models.CharField(max_length=25, default='')
-    text = models.CharField(max_length=500)
+    text = models.CharField(min_length=1, max_length=500)
     pub_data = models.DateTimeField('publishing date')
     user_post = models.ForeignKey(UserPost, on_delete=models.CASCADE)
